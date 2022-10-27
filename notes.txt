@@ -1,0 +1,25 @@
+mkdir .vscode
+touch .vscode/settings.json
+cat ~/settings-template.json > .vscode/settings.json
+git add .
+git commit -m "Create VS Code config file \n\nStandardize local VS Code settings"
+git push
+touch .gitignore
+cat ~/gitignore-template > .gitignore
+git add .
+git commit -m "Create gitignore \n\nVersion control ignores specified files"
+git push
+npm init --yes
+git add .
+git commit -m "Create package.json \n\nStore project metadata"
+git push
+npm install eslint @eslint/create-config --save-dev
+npx eslint --init
+git add .
+git commit -m "Configure ESLint\n\nCheck syntax and enforce style conventions"
+git push
+
+
+After copying eslint config file to project:
+Install these packages w/NPM
+eslint-config-airbnb-base@latest eslint@^7.32.0 || ^8.2.0 eslint-plugin-import@^2.25.2
